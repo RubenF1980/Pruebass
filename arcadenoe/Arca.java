@@ -95,5 +95,40 @@ public class Arca {
     }
     
     
+    //metodo para imprimir.Concateno en una cadena para mostrar 
+    public String mostrarArca(){
+        
+        String cadena="";
+        
+        for (int i = 0; i < this.getPosicion(); i++) {
+            
+            cadena +="\nNombre : " + this.arca[i].getNombre()+ 
+                    "\nGenero : " + this.arca[i].getGenero()+
+                    "\nEspecie : " + this.arca[i].getEspecie()+
+                    "\n---------------\n";
+        }
+        
+        return cadena;
+    }
+    
+       //metodo para encontrar un animal
+    public Animales buscarAnimal(String nombre){  //LE PASO EL NOMBRE 
+        
+      
+        
+        for (int i = 0; i < this.getPosicion(); i++) { //recorre hasta donde haya elementos al usar posicion para controlar
+            
+            if(nombre.compareTo(this.arca[i].getNombre())==0){ //si el nombre es igual al nombre del arca en la posicion de i
+                
+               
+                
+                return this.arca[i];  //si lo encuentra retorna todo el objeto 
+            
+            }    
+        }    
+        return null;  // si no lo encuentra retorna null
+       
+    }
+    
     
 }//class arca

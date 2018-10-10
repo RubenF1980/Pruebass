@@ -5,6 +5,8 @@
  */
 package arcadenoe;
 
+import javax.sound.midi.Soundbank;
+
 /**
  *
  * @author Alumno37
@@ -30,14 +32,14 @@ public class PruebaArca {
           
         
         Animales[] copiaArca=arca.getArca(); // creo otro array y apunta a el array arca usando get
-        
+       //////////////////////////////////////// 
         ///imprimo de uno en uno 
         System.out.println("------Uno en uno -------"); //saco un animal
         System.out.println(copiaArca[0].getNombre()); //imprimo el nombre del primer insertado
         System.out.println(copiaArca[0].getGenero()); // imprimo la raza del primer insertado
         System.out.println(copiaArca[0].getEspecie()); // imprimo la raza del primer insertado        
         
-        
+        ////////////////////////////////////////////
         System.out.println("-----IMPRIMO TODOS--------");
         //imprimo el nombre de los que metimos usando un for 
         for (int i = 0; i < copiaArca.length; i++) 
@@ -50,7 +52,7 @@ public class PruebaArca {
             }  
         }
         
-        
+       /////////////////////////////////////////// 
         System.out.println("------SACO ANIMAL POR SU NOMBRE-------"); 
         
         arca.sacarAnimal("Obelix");  //metodo con el que saco un animal
@@ -60,10 +62,29 @@ public class PruebaArca {
             if(copiaArca[i] !=null)  //controlo si nos pasamos del tamaño del array 
             {
                 System.out.println(copiaArca[i].getNombre());
-                System.out.println(copiaArca[i].getGenero());                
-               System.out.println(copiaArca[i].getEspecie());
+                //System.out.println(copiaArca[i].getGenero());                
+               // System.out.println(copiaArca[i].getEspecie());
             }  
         }
+        
+        ////////////////////////////////////////////////////////////////////////////////
+        System.out.println("------USANDO EL METODO IMPRIMIR -------");       
+        
+        System.out.println(arca.mostrarArca()); //USO METODO IMPRIMIR 
+        
+        System.out.println("Se saca un animal ");
+        arca.sacarAnimal("Lucas");
+        
+        System.out.println(arca.mostrarArca()); 
+        
+        Animales animalBuscar=null;  // inicializo variable de tipo animamles
+        
+        animalBuscar=arca.buscarAnimal("Rufus");
+        
+        if(animalBuscar != null){
+            System.out.println(animalBuscar.getNombre());  //devuelve todo el objeto pero solo imprimo el nombre
+        }
+        
         
         
         
